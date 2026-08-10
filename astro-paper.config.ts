@@ -3,7 +3,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 export default defineAstroPaperConfig({
   site: {
     url: "https://blog.mayupeng.workers.dev/",
-    title: "Michael Ma",
+    title: "Michael's Blog",
     description:
       "马宇鹏 / Michael Ma 的个人博客 — 记录技术、思考与生活。",
     author: "Michael Ma",
