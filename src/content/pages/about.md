@@ -1,37 +1,22 @@
 ---
-title: "About"
-description: "A bit about me and this blog."
+title: "关于"
+description: "关于马宇鹏 / Michael Ma"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+Hi，你好，我是**马宇鹏**（**Michael Ma**）。
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+目前我体验过的工作有：
+麦当劳员工，制氧厂工人，高炉炼铁炉前工，冶金工程师，，酒吧驻场歌手，杂志编辑，石头钻杆机械外贸员，制砖机械外贸员，英语导游，驻非洲翻译，初中英语老师，信息安全分析师，肉店切肉屠夫，以及安卓开发程序员
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+这是我的个人博客，用来分享技术笔记、项目经验，以及一些生活与思考。
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+## Contact
 
-## Features
+- GitHub: [MichaelYupengMa](https://github.com/MichaelYupengMa)
+- X: [@michaelhorse12](https://x.com/michaelhorse12)
+- LinkedIn: [Michael Ma](https://www.linkedin.com/in/michael-ma-b99685180/)
+- Facebook: [Facebook](https://www.facebook.com/profile.php?id=100092512600734)
+- Email: [michaelfromxian@gmail.com](mailto:michaelfromxian@gmail.com)
+- <span id="wechat">WeChat / 微信</span>: `m521Yp365Yp`
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
-
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+如果你也对技术、产品或协作感兴趣，欢迎通过以上方式联系我。
