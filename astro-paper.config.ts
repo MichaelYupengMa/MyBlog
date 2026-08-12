@@ -5,7 +5,7 @@ export default defineAstroPaperConfig({
     url: "https://blog.mayupeng.workers.dev/",
     title: "Michael's Blog",
     description:
-      "马宇鹏 / Michael Ma 的个人博客 — 记录技术、思考与生活。",
+      "Michael Ma's personal blog — notes on tech, thinking, and life.",
     author: "Michael Ma",
     profile: "https://github.com/MichaelYupengMa",
     ogImage: "default-og.jpg",
