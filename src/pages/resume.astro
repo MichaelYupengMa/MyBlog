@@ -22,7 +22,10 @@ import config from "@/config";
     <ResumeSection title="Experience">
       {
         resume.experience.map(job => (
-          <ResumeItem title={`${job.title} — ${job.company}`}>
+          <ResumeItem
+            title={`${job.title} — ${job.company}`}
+            href={job.companyUrl}
+          >
             <p class="!my-1">
               <strong>{job.employmentType}</strong> · {job.location}
               <br />

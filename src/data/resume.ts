@@ -1,6 +1,7 @@
 export type ResumeJob = {
   title: string;
   company: string;
+  companyUrl?: string;
   employmentType: string;
   location: string;
   dates: string;
@@ -50,6 +51,7 @@ const resume: ResumeData = {
     {
       title: "Software Developer",
       company: "Pay It Now (PIN)",
+      companyUrl: "https://payitnow.io/",
       employmentType: "Full-time",
       location: "Christchurch, New Zealand · On-site",
       dates: "Oct 2024 – Present",
@@ -60,6 +62,7 @@ const resume: ResumeData = {
     {
       title: "Information Security Analyst Intern",
       company: "Pay It Now (PIN)",
+      companyUrl: "https://payitnow.io/",
       employmentType: "Internship",
       location: "Christchurch, New Zealand · On-site",
       dates: "Jul 2024 – Oct 2024",
@@ -70,6 +73,7 @@ const resume: ResumeData = {
     {
       title: "Information Security Analyst",
       company: "Teleperformance",
+      companyUrl: "https://www.teleperformance.com/",
       employmentType: "Permanent",
       location: "Shaanxi, China · On-site",
       dates: "Dec 2019 – Jun 2023",
@@ -87,6 +91,7 @@ const resume: ResumeData = {
     {
       title: "Project Assistant and Interpreter",
       company: "Kinetic Development Group Limited",
+      companyUrl: "https://www.kineticme.com/en/",
       employmentType: "Full-time",
       location: "Beijing, China · Hybrid (including Harare, Zimbabwe)",
       dates: "Jun 2018 – Nov 2019",
@@ -102,6 +107,7 @@ const resume: ResumeData = {
     {
       title: "Tour Guide",
       company: "Shaanxi China Travel Service Co., Ltd.",
+      companyUrl: "https://www.chinaxiantour.com/about-us/team",
       employmentType: "Freelance",
       location: "Xi'an, Shaanxi, China · Hybrid",
       dates: "Apr 2016 – Jun 2018",
@@ -115,6 +121,7 @@ const resume: ResumeData = {
     {
       title: "Metallurgical Engineer",
       company: "Shaanxi Steel Group Hancheng Iron and Steel Co., Ltd.",
+      companyUrl: "https://www.lm-steel.com/",
       employmentType: "Full-time",
       location: "Weinan, Shaanxi, China · On-site",
       dates: "Jul 2014 – Apr 2016",
