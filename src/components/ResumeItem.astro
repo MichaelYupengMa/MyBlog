@@ -1,0 +1,15 @@
+---
+type Props = {
+  title: string;
+  open?: boolean;
+};
+
+const { title, open = false } = Astro.props;
+---
+
+<details class="resume-item" open={open || undefined}>
+  <summary>{title}</summary>
+  <div class="resume-item__body">
+    <slot />
+  </div>
+</details>

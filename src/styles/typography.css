@@ -97,7 +97,7 @@
       @apply border-s-accent/80 wrap-break-word opacity-80;
     }
 
-    details:not(.callout):not(.resume-section) {
+    details:not(.callout):not(.resume-section):not(.resume-item) {
       @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
     }
 
@@ -123,6 +123,23 @@
 
     details.resume-section .resume-section__body p,
     details.resume-section .resume-section__body ul {
+      @apply block;
+    }
+
+    details.resume-item {
+      @apply text-foreground my-2 block w-full;
+    }
+
+    details.resume-item > summary {
+      @apply text-foreground mb-0 cursor-pointer py-1 text-lg font-semibold italic select-none;
+    }
+
+    details.resume-item[open] > summary {
+      @apply mb-2;
+    }
+
+    details.resume-item .resume-item__body p,
+    details.resume-item .resume-item__body ul {
       @apply block;
     }
 

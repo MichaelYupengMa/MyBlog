@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb.astro";
 import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
 import ResumeSection from "@/components/ResumeSection.astro";
+import ResumeItem from "@/components/ResumeItem.astro";
 import resume from "@/data/resume";
 import config from "@/config";
 ---
@@ -21,10 +22,7 @@ import config from "@/config";
     <ResumeSection title="Experience">
       {
         resume.experience.map(job => (
-          <section class="mb-6">
-            <h3 class="!mb-1">
-              {job.title} — {job.company}
-            </h3>
+          <ResumeItem title={`${job.title} — ${job.company}`}>
             <p class="!my-1">
               <strong>{job.employmentType}</strong> · {job.location}
               <br />
@@ -35,7 +33,7 @@ import config from "@/config";
                 <li>{item}</li>
               ))}
             </ul>
-          </section>
+          </ResumeItem>
         ))
       }
     </ResumeSection>
@@ -67,10 +65,7 @@ import config from "@/config";
     <ResumeSection title="Education">
       {
         resume.education.map(edu => (
-          <section class="mb-6">
-            <h3 class="!mb-1">
-              {edu.degree} — {edu.school}
-            </h3>
+          <ResumeItem title={`${edu.degree} — ${edu.school}`}>
             <p class="!my-1">
               {edu.dates}
               {edu.grade && (
@@ -85,7 +80,7 @@ import config from "@/config";
                 <li>{item}</li>
               ))}
             </ul>
-          </section>
+          </ResumeItem>
         ))
       }
     </ResumeSection>
