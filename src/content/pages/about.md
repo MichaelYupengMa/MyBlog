@@ -3,11 +3,7 @@ title: "About"
 description: "About Michael Ma"
 ---
 
-Hi, I'm **Michael Ma** (马宇鹏).
-
-Jobs I've tried so far:
-
-McDonald's crew member, oxygen plant worker, blast furnace front-line worker, metallurgical engineer, bar singer, magazine editor, stone drill rod machinery trader, brick-making machinery trader, English tour guide, translator in Africa, junior high English teacher, information security analyst, butcher, and Android developer.
+Hi, I'm **Michael Ma**.
 
 This is my personal blog for sharing tech notes, project experience, and some thoughts on life.
 

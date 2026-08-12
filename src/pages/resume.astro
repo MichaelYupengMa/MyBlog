@@ -1,0 +1,107 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import ResumeSection from "@/components/ResumeSection.astro";
+import resume from "@/data/resume";
+import config from "@/config";
+---
+
+<Layout
+  title={`${resume.title} | ${config.site.title}`}
+  description={resume.description}
+>
+  <Header />
+  <Breadcrumb />
+
+  <Main class="app-prose">
+    <h1 class="sr-only">{resume.title}</h1>
+    <ResumeSection title="Experience">
+      {
+        resume.experience.map(job => (
+          <section class="mb-6">
+            <h3 class="!mb-1">
+              {job.title} — {job.company}
+            </h3>
+            <p class="!my-1">
+              <strong>{job.employmentType}</strong> · {job.location}
+              <br />
+              {job.dates}
+            </p>
+            <ul>
+              {job.bullets.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </ResumeSection>
+
+    <ResumeSection title="Projects">
+      <ul>
+        {
+          resume.projects.map(project => (
+            <li>
+              <strong>{project.name}</strong> — {project.description}
+            </li>
+          ))
+        }
+      </ul>
+    </ResumeSection>
+
+    <ResumeSection title="Skills">
+      <ul>
+        {
+          resume.skills.map(skill => (
+            <li>
+              <strong>{skill.label}:</strong> {skill.items}
+            </li>
+          ))
+        }
+      </ul>
+    </ResumeSection>
+
+    <ResumeSection title="Education">
+      {
+        resume.education.map(edu => (
+          <section class="mb-6">
+            <h3 class="!mb-1">
+              {edu.degree} — {edu.school}
+            </h3>
+            <p class="!my-1">
+              {edu.dates}
+              {edu.grade && (
+                <>
+                  <br />
+                  <strong>Grade:</strong> {edu.grade}
+                </>
+              )}
+            </p>
+            <ul>
+              {edu.bullets.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </ResumeSection>
+
+    <ResumeSection title="Contact">
+      <ul>
+        {
+          resume.contact.map(item => (
+            <li>
+              {item.label}: <a href={item.href}>{item.text}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </ResumeSection>
+  </Main>
+
+  <Footer />
+</Layout>

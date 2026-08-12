@@ -97,8 +97,33 @@
       @apply border-s-accent/80 wrap-break-word opacity-80;
     }
 
-    details:not(.callout) {
+    details:not(.callout):not(.resume-section) {
       @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
+    }
+
+    details.resume-section {
+      @apply text-foreground border-border my-4 block w-full border-b pb-2;
+    }
+
+    details.resume-section > summary {
+      @apply text-foreground mb-0 cursor-pointer py-2 text-2xl font-semibold tracking-wide select-none;
+    }
+
+    details.resume-section[open] > summary {
+      @apply mb-3;
+    }
+
+    details.resume-section > summary + * {
+      @apply mt-0;
+    }
+
+    details.resume-section .resume-section__body {
+      @apply text-foreground;
+    }
+
+    details.resume-section .resume-section__body p,
+    details.resume-section .resume-section__body ul {
+      @apply block;
     }
 
     summary {

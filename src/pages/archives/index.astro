@@ -32,7 +32,8 @@ const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long" });
 
   <Breadcrumb />
 
-  <Main pageTitle={t.pages.archivesTitle} pageDesc={t.pages.archivesDesc}>
+  <Main pageDesc={t.pages.archivesDesc}>
+    <h1 class="sr-only">{t.pages.archivesTitle}</h1>
     {
       Object.entries(
         getPostsByGroupCondition(filteredPosts, post =>

@@ -32,7 +32,8 @@ const t = useTranslations(locale);
 
   <Breadcrumb />
 
-  <Main pageTitle={t.pages.searchTitle} pageDesc={t.pages.searchDesc}>
+  <Main pageDesc={t.pages.searchDesc}>
+    <h1 class="sr-only">{t.pages.searchTitle}</h1>
     <div
       id="pagefind-search"
       transition:persist
