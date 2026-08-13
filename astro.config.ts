@@ -68,6 +68,15 @@ export default defineConfig({
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],
     },
+    {
+      name: "Space Grotesk",
+      cssVariable: "--font-space-grotesk",
+      provider: fontProviders.google(),
+      fallbacks: ["ui-sans-serif", "system-ui", "sans-serif"],
+      weights: [400, 500, 600, 700],
+      styles: ["normal"],
+      formats: ["woff2", "woff"],
+    },
   ],
   env: {
     schema: {

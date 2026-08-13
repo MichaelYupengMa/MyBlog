@@ -4,31 +4,57 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-surface: var(--surface);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+
   --font-app: var(--font-google-sans-code);
+  --font-display: var(--font-space-grotesk);
 }
 
 /* Light theme values */
 :root,
 [data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
+  --background: #fcfcfd;
+  --foreground: #1f2328;
+  --accent: #0b69c7;
   --accent-foreground: #ffffff;
-  --muted: #e6e6e6;
-  --muted-foreground: #6b7280;
-  --border: #ece9e9;
+  --accent-secondary: #0e9488;
+  --surface: #ffffff;
+  --muted: #eceef2;
+  --muted-foreground: #5f6875;
+  --border: #e2e5ea;
+
+  /* Decorative layers (hero background) */
+  --glow-primary: color-mix(in oklab, var(--accent) 20%, transparent);
+  --glow-secondary: color-mix(
+    in oklab,
+    var(--accent-secondary) 16%,
+    transparent
+  );
+  --grid-line: color-mix(in oklab, var(--foreground) 8%, transparent);
 }
 
 /* Dark theme values */
 [data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --accent-foreground: #ffffff;
-  --muted: #343f60;
-  --muted-foreground: #afb9ca;
-  --border: #ab4b08;
+  --background: #1c2130;
+  --foreground: #e8ecf4;
+  --accent: #ff7a1a;
+  --accent-foreground: #191d26;
+  --accent-secondary: #ffc247;
+  --surface: #232a3b;
+  --muted: #2b3346;
+  --muted-foreground: #a6b0c3;
+  --border: #333c52;
+
+  /* Decorative layers (hero background) */
+  --glow-primary: color-mix(in oklab, var(--accent) 26%, transparent);
+  --glow-secondary: color-mix(
+    in oklab,
+    var(--accent-secondary) 18%,
+    transparent
+  );
+  --grid-line: color-mix(in oklab, var(--foreground) 10%, transparent);
 }
