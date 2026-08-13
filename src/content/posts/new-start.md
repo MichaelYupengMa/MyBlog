@@ -1,5 +1,5 @@
 ---
-title: 新的开始
+title: New Start
 description: Today is first day of my blog!
 pubDatetime: 2026-08-10T14:00:00+12:00
 featured: true
@@ -8,6 +8,6 @@ tags:
   - blog
 ---
 
-今天我创建了个人Blog!
+Today I started my personal blog.
 
-Today is first day of my Blog!
+This is my personal blog for sharing tech notes, project experience, and some thoughts on life.

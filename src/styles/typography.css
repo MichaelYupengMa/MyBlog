@@ -97,8 +97,78 @@
       @apply border-s-accent/80 wrap-break-word opacity-80;
     }
 
-    details:not(.callout) {
+    details:not(.callout):not(.resume-section):not(.resume-item) {
       @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
+    }
+
+    details.resume-section {
+      @apply text-foreground border-border my-4 block w-full border-b pb-2;
+    }
+
+    details.resume-section > summary {
+      @apply text-foreground mb-0 cursor-pointer py-2 text-2xl font-semibold tracking-wide select-none;
+    }
+
+    details.resume-section[open] > summary {
+      @apply mb-3;
+    }
+
+    details.resume-section > summary + * {
+      @apply mt-0;
+    }
+
+    details.resume-section .resume-section__body {
+      @apply text-foreground;
+    }
+
+    details.resume-section .resume-section__body p,
+    details.resume-section .resume-section__body ul {
+      @apply block;
+    }
+
+    details.resume-item {
+      @apply text-foreground my-2 block w-full;
+    }
+
+    details.resume-item > summary {
+      @apply text-foreground mb-0 flex cursor-pointer list-none items-start gap-2 py-1 text-lg font-semibold italic select-none;
+    }
+
+    details.resume-item > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.resume-item > summary::before {
+      content: "";
+      flex: none;
+      width: 0.4em;
+      height: 0.4em;
+      margin-top: 0.5em;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(-45deg);
+      transition: transform 0.15s ease;
+    }
+
+    details.resume-item[open] > summary::before {
+      transform: rotate(45deg);
+    }
+
+    details.resume-item > summary .resume-item__heading {
+      @apply flex min-w-0 flex-1 flex-wrap items-center gap-x-2 wrap-break-word;
+    }
+
+    details.resume-item[open] > summary {
+      @apply mb-2;
+    }
+
+    details.resume-item .resume-item__link {
+      @apply text-muted-foreground hover:text-accent inline-flex shrink-0 no-underline;
+    }
+
+    details.resume-item .resume-item__body p,
+    details.resume-item .resume-item__body ul {
+      @apply block;
     }
 
     summary {

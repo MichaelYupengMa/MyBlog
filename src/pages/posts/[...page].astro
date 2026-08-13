@@ -28,7 +28,8 @@ const t = useTranslations(locale);
 
   <Breadcrumb />
 
-  <Main pageTitle={t.pages.postsTitle} pageDesc={t.pages.postsDesc}>
+  <Main>
+    <h1 class="sr-only">{t.pages.postsTitle}</h1>
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>
