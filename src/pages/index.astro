@@ -81,7 +81,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
     padding-block: 3rem 2.5rem;
   }
 
-  /* Two soft colour blooms plus a faint grid, faded out towards the edges. */
+  /* Localised colour blooms on top of the site-wide ambient grid. */
   .hero-backdrop {
     position: absolute;
     inset: 0 -4rem auto -4rem;
@@ -94,14 +94,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
         36% 50% at 76% 35%,
         var(--glow-secondary),
         transparent 70%
-      ),
-      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-    background-size:
-      auto,
-      auto,
-      2.75rem 2.75rem,
-      2.75rem 2.75rem;
+      );
     mask-image: radial-gradient(62% 62% at 32% 42%, #000 5%, transparent 78%);
   }
 

@@ -13,7 +13,7 @@ const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 const { title, description, ...props } = data;
 ---
 
-<li class="my-6">
+<li class="post-card glass my-5 rounded-xl p-5">
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
     class:list={[
@@ -29,3 +29,27 @@ const { title, description, ...props } = data;
   <Datetime {...props} />
   <p>{description}</p>
 </li>
+
+<style>
+  .post-card {
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--accent) 45%, var(--glass-border));
+    box-shadow: 0 16px 40px -28px color-mix(in oklab, var(--accent) 80%, black);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .post-card {
+      transition: none;
+    }
+    .post-card:hover {
+      transform: none;
+    }
+  }
+</style>

@@ -17,7 +17,7 @@
 /* Light theme values */
 :root,
 [data-theme="light"] {
-  --background: #fcfcfd;
+  --background: #f6f8fb;
   --foreground: #1f2328;
   --accent: #0b69c7;
   --accent-foreground: #ffffff;
@@ -35,6 +35,21 @@
     transparent
   );
   --grid-line: color-mix(in oklab, var(--foreground) 8%, transparent);
+
+  /* Decorative layers (site-wide ambient backdrop) */
+  --grid-line-soft: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --grid-dot: color-mix(in oklab, var(--foreground) 12%, transparent);
+  --glow-ambient: color-mix(in oklab, var(--accent) 11%, transparent);
+  --glow-ambient-secondary: color-mix(
+    in oklab,
+    var(--accent-secondary) 9%,
+    transparent
+  );
+  --glow-cursor: color-mix(in oklab, var(--accent) 10%, transparent);
+
+  /* Glass surfaces */
+  --glass-bg: color-mix(in oklab, var(--surface) 62%, transparent);
+  --glass-border: color-mix(in oklab, var(--foreground) 10%, transparent);
 }
 
 /* Dark theme values */
@@ -57,4 +72,19 @@
     transparent
   );
   --grid-line: color-mix(in oklab, var(--foreground) 10%, transparent);
+
+  /* Decorative layers (site-wide ambient backdrop) */
+  --grid-line-soft: color-mix(in oklab, var(--foreground) 7%, transparent);
+  --grid-dot: color-mix(in oklab, var(--foreground) 16%, transparent);
+  --glow-ambient: color-mix(in oklab, var(--accent) 15%, transparent);
+  --glow-ambient-secondary: color-mix(
+    in oklab,
+    var(--accent-secondary) 10%,
+    transparent
+  );
+  --glow-cursor: color-mix(in oklab, var(--accent) 16%, transparent);
+
+  /* Glass surfaces */
+  --glass-bg: color-mix(in oklab, var(--surface) 55%, transparent);
+  --glass-border: color-mix(in oklab, var(--foreground) 14%, transparent);
 }
