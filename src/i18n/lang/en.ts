@@ -33,6 +33,8 @@ export default {
     featured: "Featured",
     recentPosts: "Recent Posts",
     allPosts: "All Posts",
+    browsePosts: "Browse posts",
+    aboutMe: "About me",
   },
   footer: {
     copyright: "Copyright",

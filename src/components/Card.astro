@@ -13,19 +13,53 @@ const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 const { title, description, ...props } = data;
 ---
 
-<li class="my-6">
+<li class="my-5">
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
-    class:list={[
-      "text-accent inline-block text-lg font-medium",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
-    ]}
+    class="post-card glass block rounded-xl p-5 no-underline"
   >
-    <Heading transition:name={toTransitionName(id)}>
+    <Heading
+      transition:name={toTransitionName(id)}
+      class="text-accent text-lg font-medium"
+    >
       {title}
     </Heading>
+    <Datetime {...props} />
+    <p class="text-foreground">{description}</p>
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
 </li>
+
+<style>
+  .post-card {
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .post-card:hover,
+  .post-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: color-mix(in oklab, var(--accent) 45%, var(--glass-border));
+    box-shadow: 0 16px 40px -28px color-mix(in oklab, var(--accent) 80%, black);
+  }
+
+  .post-card:hover :global(h2),
+  .post-card:hover :global(h3),
+  .post-card:focus-visible :global(h2),
+  .post-card:focus-visible :global(h3) {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .post-card {
+      transition: none;
+    }
+    .post-card:hover,
+    .post-card:focus-visible {
+      transform: none;
+    }
+  }
+</style>

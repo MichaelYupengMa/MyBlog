@@ -20,6 +20,16 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-space-grotesk);
+    letter-spacing: -0.02em;
+  }
+  h1 {
+    text-wrap: balance;
+  }
 }
 
 @utility max-w-app {
@@ -34,6 +44,119 @@
   @apply underline decoration-wavy decoration-2 underline-offset-8;
 }
 
+/* Frosted-glass surface used for post cards and code blocks. */
+@utility glass {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+
 :target {
   scroll-margin-block: 1rem;
+}
+
+/* ===== Ambient backdrop =====
+   Fixed grid + dot matrix + soft colour blooms sitting behind every page.
+   Relies on the body background propagating to the canvas so this layer
+   stays visible. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(
+      45rem 24rem at 12% -6%,
+      var(--glow-ambient),
+      transparent 65%
+    ),
+    radial-gradient(
+      40rem 22rem at 88% -2%,
+      var(--glow-ambient-secondary),
+      transparent 65%
+    ),
+    radial-gradient(var(--grid-dot) 1px, transparent 1.6px),
+    linear-gradient(to right, var(--grid-line-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-soft) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    3.5rem 3.5rem,
+    3.5rem 3.5rem,
+    3.5rem 3.5rem;
+  mask-image: linear-gradient(to bottom, #000, #000 45%, transparent 92%);
+}
+
+/* Cursor-following glow. Position is driven by --cursor-x / --cursor-y set in
+   JS; falls back to top-centre before the first pointer move. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background: radial-gradient(
+    22rem 22rem at var(--cursor-x, 50%) var(--cursor-y, 0%),
+    var(--glow-cursor),
+    transparent 60%
+  );
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  body.cursor-glow-ready::after {
+    opacity: 1;
+  }
+}
+
+/* ===== Motion ===== */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.9rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Staggered entrance; delay is set per element via --rise-delay. */
+  .rise-in {
+    animation: rise-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: var(--rise-delay, 0ms);
+  }
+
+  /* Page-level animation for Astro's ClientRouter view transitions. */
+  ::view-transition-old(root) {
+    animation: vt-fade-out 0.18s ease-in both;
+  }
+  ::view-transition-new(root) {
+    animation: vt-fade-in 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }

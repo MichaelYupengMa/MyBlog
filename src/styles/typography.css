@@ -182,7 +182,7 @@
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
   .astro-code {
-    @apply outline-border flex border bg-(--shiki-light-bg) text-(--shiki-light) [&_span]:text-(--shiki-light);
+    @apply outline-border flex rounded-lg border bg-(--shiki-light-bg) text-(--shiki-light) shadow-lg shadow-black/5 [&_span]:text-(--shiki-light);
   }
 
   html[data-theme="dark"] .astro-code {
