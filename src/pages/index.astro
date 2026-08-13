@@ -147,6 +147,33 @@ const homePath = getRelativeLocaleUrl(locale, "");
     transform-origin: 66% 44%;
   }
 
+  /* Idle float on the frame, pointer parallax on the photo inside it, so the
+     card, the photo and the static halo drift at different rates. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-portrait__frame {
+      animation: portrait-float 7s ease-in-out infinite;
+    }
+
+    .hero-portrait__img {
+      transform: scale(1.4) translateX(-11%)
+        translate(
+          calc(var(--pointer-nx, 0) * 4px),
+          calc(var(--pointer-ny, 0) * 4px)
+        );
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  @keyframes portrait-float {
+    0%,
+    100% {
+      transform: translateY(-4px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+  }
+
   @media (min-width: 640px) {
     .hero-inner {
       grid-template-columns: minmax(0, 1fr) auto;
