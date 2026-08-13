@@ -1,5 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import IconHome from "@/assets/icons/IconHome.svg";
+import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { stripBase, stripLocale } from "@/utils/withBase";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
@@ -61,42 +63,107 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
 }
 ---
 
-<nav class="app-layout mt-8 mb-1" aria-label="breadcrumb">
-  <ul
-    class="flex flex-wrap items-center gap-x-1 font-light [&>li:not(:last-child)>a]:hover:opacity-100"
-  >
-    <li class="flex items-center gap-x-1">
-      <a href={getRelativeLocaleUrl(locale, "")} class="opacity-80">
+<nav class="app-layout mt-8 mb-3" aria-label="breadcrumb">
+  <ul class="breadcrumb glass">
+    <li>
+      <a href={getRelativeLocaleUrl(locale, "")} class="breadcrumb__link">
+        <IconHome class="breadcrumb__home" aria-hidden="true" />
         {t.nav.home}
       </a>
-      <span aria-hidden="true" class="opacity-80">&raquo;</span>
     </li>
     {
-      breadcrumbList.map((breadcrumb, index) =>
-        index + 1 === breadcrumbList.length ? (
-          <li>
+      breadcrumbList.map((breadcrumb, index) => (
+        <li>
+          <IconChevronRight class="breadcrumb__sep" aria-hidden="true" />
+          {index + 1 === breadcrumbList.length ? (
             <span
-              class:list={["capitalize opacity-75", { lowercase: index > 0 }]}
+              class:list={[
+                "breadcrumb__current capitalize",
+                { lowercase: index > 0 },
+              ]}
               aria-current="page"
             >
               {/* make the last part lowercase in Home > Tags > some-tag */}
               {navLabels[breadcrumb] ?? decodeSegment(breadcrumb)}
             </span>
-          </li>
-        ) : (
-          <li class="flex items-center gap-x-1">
+          ) : (
             <a
               href={getRelativeLocaleUrl(locale, breadcrumb)}
-              class="capitalize opacity-70"
+              class="breadcrumb__link capitalize"
             >
               {navLabels[breadcrumb] ?? decodeSegment(breadcrumb)}
             </a>
-            <span aria-hidden="true" class="opacity-70">
-              &raquo;
-            </span>
-          </li>
-        )
-      )
+          )}
+        </li>
+      ))
     }
   </ul>
 </nav>
+
+<style>
+  .breadcrumb {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2rem 0.5rem;
+    border-radius: 999px;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.9375rem;
+
+    /* Accent-tinted glass: a diagonal sheen between the two brand colours
+       plus a faint accent ring, so the pill reads as part of the UI chrome. */
+    background-color: color-mix(in oklab, var(--accent) 7%, var(--glass-bg));
+    background-image: linear-gradient(
+      115deg,
+      color-mix(in oklab, var(--accent) 14%, transparent),
+      transparent 45%,
+      color-mix(in oklab, var(--accent-secondary) 14%, transparent)
+    );
+    border-color: color-mix(in oklab, var(--accent) 32%, var(--glass-border));
+    box-shadow: 0 10px 30px -22px
+      color-mix(in oklab, var(--accent) 85%, transparent);
+  }
+
+  .breadcrumb li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: color-mix(in oklab, var(--accent) 55%, var(--muted-foreground));
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb__link:hover {
+    color: var(--accent);
+  }
+
+  .breadcrumb__home {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--accent);
+  }
+
+  .breadcrumb__sep {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex: none;
+    color: var(--accent);
+    opacity: 0.5;
+  }
+
+  .breadcrumb__current {
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .breadcrumb__link {
+      transition: none;
+    }
+  }
+</style>
