@@ -54,20 +54,9 @@ const resume: ResumeData = {
       companyUrl: "https://payitnow.io/",
       employmentType: "Full-time",
       location: "Christchurch, New Zealand · On-site",
-      dates: "Oct 2024 – Present",
+      dates: "Jul 2024 – Present",
       bullets: [
         "Software programming, code modifications, and version upgrades for the PIN Network mobile app and web app",
-      ],
-    },
-    {
-      title: "Information Security Analyst Intern",
-      company: "Pay It Now (PIN)",
-      companyUrl: "https://payitnow.io/",
-      employmentType: "Internship",
-      location: "Christchurch, New Zealand · On-site",
-      dates: "Jul 2024 – Oct 2024",
-      bullets: [
-        "Penetration testing for the Pay It Now app, website, and infrastructure network",
       ],
     },
     {
