@@ -89,7 +89,7 @@ const resume: ResumeData = {
       ],
     },
     {
-      title: "Project Assistant and Interpreter",
+      title: "Project Assistant",
       company: "Kinetic Development Group Limited",
       companyUrl: "https://www.kineticme.com/en/",
       employmentType: "Full-time",
@@ -105,7 +105,7 @@ const resume: ResumeData = {
       ],
     },
     {
-      title: "Tour Guide",
+      title: "English Tour Guide",
       company: "Shaanxi China Travel Service Co., Ltd.",
       companyUrl: "https://www.chinaxiantour.com/about-us/team",
       employmentType: "Freelance",
@@ -120,7 +120,7 @@ const resume: ResumeData = {
     },
     {
       title: "Metallurgical Engineer",
-      company: "Shaanxi Steel Group Hancheng Iron and Steel Co., Ltd.",
+      company: "Shaanxi Steel Group",
       companyUrl: "https://www.lm-steel.com/",
       employmentType: "Full-time",
       location: "Weinan, Shaanxi, China · On-site",
@@ -174,8 +174,9 @@ const resume: ResumeData = {
       dates: "Nov 2023 – Dec 2024",
       grade: "7",
       bullets: [
-        "Completed a cybersecurity internship at Pay It Now and received an A on the final project",
-        "Relevant skills: Flask, MySQL, and related applied computing coursework",
+        "Advanced Programming",
+        "Database Management",
+        "Business Engagement and User Experience",
       ],
     },
     {
@@ -184,11 +185,11 @@ const resume: ResumeData = {
       dates: "Sep 2010 – Dec 2014",
       grade: "A",
       bullets: [
-        "President of the Guitar Club (2010–2013)",
-        "Built science and engineering thinking, self-study habits, and rapid learning ability",
-        "Gained social experience through various part-time jobs; learned guitar",
-        "Passed CET-4 and CET-6; developed foundational computer / Office skills",
-        "Relevant focus: process engineering, mechanical engineering",
+        "President of the Guitar Club",
+        "Science and engineering thinking",
+        "Established self-study habits and rapid learning ability",
+        "Gained social experience through various part-time jobs",
+        "Developed foundational computer skills",
       ],
     },
   ],

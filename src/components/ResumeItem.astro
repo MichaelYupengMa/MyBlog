@@ -12,22 +12,24 @@ const { title, href, open = false } = Astro.props;
 
 <details class="resume-item" open={open || undefined}>
   <summary>
-    <span class="resume-item__title">{title}</span>
-    {
-      href && (
-        <a
-          class="resume-item__link"
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open company website"
-          title="Open company website"
-          onclick="event.stopPropagation()"
-        >
-          <IconExternalLink width={16} height={16} class="inline-block" />
-        </a>
-      )
-    }
+    <span class="resume-item__heading">
+      <span class="resume-item__title">{title}</span>
+      {
+        href && (
+          <a
+            class="resume-item__link"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open company website"
+            title="Open company website"
+            onclick="event.stopPropagation()"
+          >
+            <IconExternalLink width={16} height={16} class="inline-block" />
+          </a>
+        )
+      }
+    </span>
   </summary>
   <div class="resume-item__body">
     <slot />
